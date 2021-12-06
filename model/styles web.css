@@ -1,0 +1,169 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	text-align: center;
+}
+.wrapper {
+    size: 100px;
+	width: 100%;
+	margin: 0 auto;
+}
+header {
+	height: 100px;
+	background: #262626;
+	width: 100%;
+	z-index: 10;
+	position: fixed;
+}
+.logo {
+	width: 30%;
+	float: left;
+	line-height: 100px;
+}
+
+.banner-area input {
+    background-color: #262626; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+nav {
+	float: right;
+	line-height: 100px;
+}
+nav a {
+	text-decoration: none;
+	font-family: poppins;
+	letter-spacing: 4px;
+	font-size: 20px;
+	margin: 0 10px;
+	color: #fff;
+}
+
+.banner-area {
+	width: 100%;
+	height: 1170px;
+	position: fixed;
+	top: 100px;
+	background-image: url('https://i.pinimg.com/originals/90/f0/3a/90f03a520cfea8dfcf69780279c2f1e7.jpg');
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+.banner-area h2 {
+	padding-top: 8%;
+	font-size: 50px;
+	font-family: poppins;
+	text-transform: uppercase;
+	color: rgb(206, 185, 68);
+}
+.content-area {
+	width: 100%;
+	position: relative;
+	top: 450px;
+	background: #6e5353;
+	height: 1500px;
+}
+.content-area h2 {
+	font-family: poppins;
+	letter-spacing: 4px;
+	padding-top: 30px;
+	font-size: 40px;
+	margin: 0;
+}
+
+
+.cards{
+    margin: 0;
+	position: absolute;
+	top: 150px;
+	left: 100px;
+	right: 100px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-auto-rows: 10; 
+    gap: 20px;
+    font-family: sans-serif;
+     padding-top: 30px; 
+}
+
+.cards * {
+    box-sizing: border-box;
+}
+
+.card__image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333;
+}
+
+
+
+.card__content > p:first-of-type {
+    margin-top: 0;
+}
+
+.card__content > p:last-of-type {
+    margin-bottom: 0;
+}
+
+.card__info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555555;
+    
+    font-size: 0.8em;
+    border-bottom: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333;
+}
+
+button{
+	margin-top: 0px;
+	margin-bottom: 10px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding:10px;
+  }
+button:hover{
+	background-color: black;
+	color: white;
+	transition: .5s;
+	cursor: pointer;
+}
+
+.form
+{
+	width: 400px;
+} 
+
+.wrapper input {
+
+	background-color: #532a2a; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
+
+
+
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>home_page</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link href="styles web.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<style>
+	/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 700px; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+	<div class="box-area">
+		<header>
+			<div class="wrapper">
+				<div class="logo">
+					<input type="button" value="Free 3D Models"></button>
+
+
+				</div>
+				<nav>
+					<a href="#">home</a>
+
+				</nav>
+			</div>
+
+		</header>
+
+		<div class="banner-area">
+			<h2>Free 3D</h2>
+			<input type='text' placeholder='Search...' id='search-text-input' />
+		</div>
+
+
+
+		<div id="aSide">
+
+			<button slot="ar-button" id="ar-button">
+				View in your space
+			</button>
+		</div>
+
+
+
+		<div class="content-area">
+			<div class="wrapper">
+				<h2>Choose your 3D one</h2>
+
+				<form action="/action_page.php">
+					<input type="file" id="myFile" name="filename">
+					<input type="submit">
+				</form>
+
+
+				<div class="cards">
+					<div class="card">
+
+						<div id="myBtn">
+							<model-viewer bounds="tight" src="wraith.glb" ar ar-modes="webxr scene-viewer quick-look"
+								camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1">
+								<div class="progress-bar hide" slot="progress-bar">
+									<div class="update-bar"></div>
+								</div>
+								<button slot="ar-button" id="ar-button">
+									View in your space
+								</button>
+							</model-viewer>
+						</div>
+
+					</div>
+
+
+				</div>
+
+				<div id="myModal" class="modal">
+
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<model-viewer bounds="tight" src="wraith.glb" ar ar-modes="webxr scene-viewer quick-look"
+							camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1" style="height: 450px; width: 100%;">
+							<div class="progress-bar hide" slot="progress-bar">
+								
+								<div class="update-bar"></div>
+							</div>
+							<button slot="ar-button" id="ar-button">
+								View in your space
+							</button>
+						</model-viewer>
+					</div>
+				</div>
+
+				<script>
+					// Get the modal
+					var modal = document.getElementById("myModal");
+
+					// Get the button that opens the modal
+					var btn = document.getElementById("myBtn");
+
+					// Get the <span> element that closes the modal
+					var span = document.getElementsByClassName("close")[0];
+
+					// When the user clicks the button, open the modal 
+					btn.onclick = function () {
+						modal.style.display = "block";
+					}
+
+					// When the user clicks on <span> (x), close the modal
+					span.onclick = function () {
+						modal.style.display = "none";
+					}
+
+					// When the user clicks anywhere outside of the modal, close it
+					window.onclick = function (event) {
+						if (event.target == modal) {
+							modal.style.display = "none";
+						}
+					}
+				</script>
+</body>
+
+
+</html>

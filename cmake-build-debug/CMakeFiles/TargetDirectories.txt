@@ -1,0 +1,3 @@
+/home/bashini/CLionProjects/BL Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/bashini/CLionProjects/BL Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/bashini/CLionProjects/BL Project/cmake-build-debug/CMakeFiles/BL_Project.dir
