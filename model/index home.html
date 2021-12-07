@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <style>
+
+	
 	/* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -97,33 +99,40 @@
 					<div class="card">
 
 						<div id="myBtn">
-							<img src="poster.webp">
+								<img id="myImg1" src="poster.webp" class="img-thumbnail" alt="Angular"  style="height: 450px; width: 100%;">
 						</div>
 
 					</div>
 
 
-			
-
-					<div class="card">
-
-						<div id="myBtn">
-							<img src="Boy.jpg">
+						<div class="card">
+	
+							<div id="myBtn">
+									<img id="myImg2" src="Boy.jpg" class="img-thumbnail" alt="Stacky" style="height: 450px; width: 100%;">
+							</div>
+	
 						</div>
 
-					</div>
 
-
-					
-					<div class="card">
-
-						<div id="myBtn">
-							<img src="car03.jpg">
+						<div class="card">
+	
+							<div id="myBtn">
+									<img id="myImg3" src="car03.jpg" class="img-thumbnail" alt="Stacky" style="height: 450px; width: 100%;">
+							</div>
+	
 						</div>
 
-					</div>
+						<div class="card">
+	
+							<div id="myBtn">
+									<img id="myImg3" src="Man.jpg" class="img-thumbnail" alt="Stacky" style="height: 450px; width: 100%;">
+							</div>
+	
+						</div>
 
-				
+
+
+
 
 				</div>
 				<div id="myModal" class="modal">
@@ -143,32 +152,50 @@
 					</div>
 				</div>
 
+				<div>   -->
+
+
+												<!-- Trigger the Modal -->
+						
+							
+							<!-- The Modal -->
+							<div id="myModal" class="modal">
+							<!-- The Close Button -->
+							<span class="close">&times;</span>
+							<!-- Modal Content (The Image) -->
+							<img class="modal-content" id="img01">
+							<!-- Modal Caption (Image Text) -->
+							<div id="caption"></div>
+							</div>
+
+					
+				</div>
+
 				<script>
-					// Get the modal
-					var modal = document.getElementById("myModal");
 
-					// Get the button that opens the modal
-					var btn = document.getElementById("myBtn");
 
-					// Get the <span> element that closes the modal
-					var span = document.getElementsByClassName("close")[0];
 
-					// When the user clicks the button, open the modal 
-					btn.onclick = function () {
-						modal.style.display = "block";
-					}
-
-					// When the user clicks on <span> (x), close the modal
-					span.onclick = function () {
-						modal.style.display = "none";
-					}
-
-					// When the user clicks anywhere outside of the modal, close it
-					window.onclick = function (event) {
-						if (event.target == modal) {
+													// Get the modal
+							var modal = document.getElementById('myModal');
+							// Get the images and bind an onclick event on each to insert it inside the modal
+							// use its "alt" text as a caption
+							var images = document.querySelectorAll(".img-thumbnail");
+							var modalImg = document.getElementById("img01");
+							var captionText = document.getElementById("caption");
+							for(let i = 0; i < images.length; i++){
+							images[i].onclick = function(){
+								modal.style.display = "block";
+								modalImg.src = this.src;
+								captionText.innerHTML = this.alt;
+							}
+							}
+							// Get the <span> element that closes the modal
+							var span = document.getElementsByClassName("close")[0];
+							// When the user clicks on <span> (x), close the modal
+							span.onclick = function() {
 							modal.style.display = "none";
-						}
-					}
+							}
+				
 				</script>
 </body>
 
