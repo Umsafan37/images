@@ -139,8 +139,8 @@
 
 					<div class="modal-content">
 						<span class="close">&times;</span>
-						<model-viewer bounds="tight" src="wraith.glb" ar ar-modes="webxr scene-viewer quick-look"
-							camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1" style="height: 450px; width: 100%;">
+						<model-viewer id="modelViewer" bounds="tight"  ar ar-modes="webxr scene-viewer quick-look"
+							camera-controls environment-image="neutral" poster="car03.jpg" shadow-intensity="1" style="height: 450px; width: 100%;">
 							<div class="progress-bar hide" slot="progress-bar">
 								
 								<div class="update-bar"></div>
@@ -180,14 +180,16 @@
 							// Get the images and bind an onclick event on each to insert it inside the modal
 							// use its "alt" text as a caption
 							var images = document.querySelectorAll(".img-thumbnail");
-							var modalImg = document.getElementById("img01");
+							var modalImg = document.getElementById("modelViewer");
 							var captionText = document.getElementById("caption");
 							for(let i = 0; i < images.length; i++){
-							images[i].onclick = function(){
-								modal.style.display = "block";
-								modalImg.src = this.src;
-								captionText.innerHTML = this.alt;
-							}
+								images[i].onclick = function(){
+									modal.style.display = "block";
+									modalImg.poster = images[i].src;
+									
+									captionText.innerHTML = images[i].alt;
+								}
+								console.log("modalImg",modalImg);
 							}
 							// Get the <span> element that closes the modal
 							var span = document.getElementsByClassName("close")[0];
