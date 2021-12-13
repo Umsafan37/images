@@ -99,7 +99,7 @@
 					<div class="card">
 
 						<div id="myBtn">
-								<img id="myImg1" src="poster.webp" class="img-thumbnail" alt="Angular"  style="height: 450px; width: 100%;">
+								<img id="myImg1" src="wraith.webp" class="img-thumbnail" alt="Angular"  style="height: 450px; width: 100%;">
 						</div>
 
 					</div>
@@ -139,8 +139,8 @@
 
 					<div class="modal-content">
 						<span class="close">&times;</span>
-						<model-viewer id="modelViewer" bounds="tight"  ar ar-modes="webxr scene-viewer quick-look"
-							camera-controls environment-image="neutral" poster="car03.jpg" shadow-intensity="1" style="height: 450px; width: 100%;">
+						<model-viewer id="modelViewer" bounds="tight" src="poster.glb"  ar ar-modes="webxr scene-viewer quick-look"
+							camera-controls environment-image="neutral"  shadow-intensity="1" style="height: 450px; width: 100%;">
 							<div class="progress-bar hide" slot="progress-bar">
 								
 								<div class="update-bar"></div>
@@ -186,10 +186,23 @@
 								images[i].onclick = function(){
 									modal.style.display = "block";
 									modalImg.poster = images[i].src;
+									const collectionOfImgAtt = images[i].src.split("/");
+									const lastCol =  collectionOfImgAtt[collectionOfImgAtt.length-1];
+									const lastColSplit = lastCol.split(".")[0]+'.glb';
+
+									// remove last item from array
+									collectionOfImgAtt.pop();
+									
+									//reduce as string of all array
+									const newString = collectionOfImgAtt.reduce((acc,curr)=>{
+										return acc+ "/" +curr;
+									});
+
+									
+									modalImg.src = newString+"/"+lastColSplit;
 									
 									captionText.innerHTML = images[i].alt;
 								}
-								console.log("modalImg",modalImg);
 							}
 							// Get the <span> element that closes the modal
 							var span = document.getElementsByClassName("close")[0];
